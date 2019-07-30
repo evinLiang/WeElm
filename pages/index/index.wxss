@@ -1,0 +1,5 @@
+/**index.wxss**/
+
+.food-list .item {
+  display: flex;
+}

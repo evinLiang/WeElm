@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='food-list'>
+    <view 
+      class='item' 
+      wx:for="{{foodList}}" 
+      wx:for-index="index" 
+      wx:for-item="item" 
+      wx:key="item"
+    >
+      {{item.name}}
+    </view>
+  </view>
+</view>
