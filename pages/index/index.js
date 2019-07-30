@@ -4,15 +4,18 @@ const app = getApp()
 
 Page({
   data: {
+    keyWord: '',
     foodList: [{
-      "name": "叫了只炸鸡"
+      "name": "炸鸡",
+      "rate": 4,
+      "distributionFee": 2,
+      "distributionTime": 35,
+      "foodImgSrc": "../../images/food1.png"
     }]
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onSearch: function() {
+    console.log(this.data)
   },
 
   onLoad: function() {

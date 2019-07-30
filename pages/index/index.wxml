@@ -1,7 +1,13 @@
 <!--index.wxml-->
+<view class="location">
+  <text>当前位置:</text> 
+  <text>广州</text> 
+  <text class="change">[切换地址]</text>
+</view>
 <van-search
-  value="{{ value }}"
+  value="{{ keyWord }}"
   placeholder="请输入搜索关键词"
+  use-action-slot
   bind:search="onSearch"
 >
   <view slot="action" bind:tap="onSearch">搜索</view>
@@ -15,7 +21,15 @@
       wx:for-item="item" 
       wx:key="item"
     >
-      {{item.name}}
+      <view class="left">
+        <image class="foodImg" src="{{item.foodImgSrc}}"></image>
+      </view>
+      <view class="right">
+        <view>{{item.name}}</view>
+        <view><van-rate gutter="0" size="10" value="{{ item.rate }}" /></view>
+        {{item.distributionFee}}
+        {{item.distributionTime}}
+      </view>
     </view>
   </view>
 </view>

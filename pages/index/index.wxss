@@ -1,5 +1,30 @@
 /**index.wxss**/
 
+.location {
+  background: #0089dc;
+  padding:28rpx 20rpx;
+  color: #ececec;
+  font-size: 12px;
+}
+
+.location text {
+  margin-right: 8rpx;
+}
+
+.location .change {
+  color: #fff;
+}
+
 .food-list .item {
   display: flex;
+}
+
+.food-list .left {
+  margin-right: 20rpx;
+}
+
+.food-list .left .foodImg {
+  width: 130rpx;
+  max-height: 130rpx;
+  border-radius: 3px;
 }
