@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {
+      'avatar': '../../images/me-d.png',
+      'name': '小明'
+    },
+    coupon: 10
   },
 
   /**

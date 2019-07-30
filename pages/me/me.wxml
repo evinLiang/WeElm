@@ -1,2 +1,11 @@
 <!--pages/me/me.wxml-->
-<view class='container'>me</view>
+<view class='me-top'>
+  <view class='avatar'>
+    <image src='{{userInfo.avatar}}'></image>
+  </view>
+  <view class='content'>
+    <view>{{userInfo.name}}</view>
+  </view>
+</view>
+<view class='whitespace'></view>
+<van-cell title="优惠券" value="{{coupon}}" />

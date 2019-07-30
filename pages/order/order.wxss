@@ -1,1 +1,46 @@
 /* pages/order/order.wxss */
+.order .items {
+  padding: 20rpx;
+  display: flex;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.food-img {
+  margin-right: 20rpx;
+}
+
+.food-img, .food-img image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.order-main {
+  flex: 1;
+}
+
+.order-main .name {
+  font-size: 32rpx;
+}
+
+.order-main .time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.fee {
+  border-bottom: 1rpx solid #ececec;
+}
+
+.fee-item {
+  padding: 15rpx 0rpx;
+  font-size: 24rpx;
+}
+
+.fee-bottom {
+  font-weight: bold;
+  padding:20rpx 0rpx 0rpx 0rpx;
+}
+
+.pay {
+  padding: 20rpx;
+}

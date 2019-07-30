@@ -3,3 +3,20 @@
 .container {
   padding:0rpx 20rpx;
 }
+
+.whitespace {
+  height: 20rpx;
+  background: #f7f7f7;
+}
+
+.mr-5 {
+  margin-right: 8rpx;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.c-red {
+  color: red;
+}

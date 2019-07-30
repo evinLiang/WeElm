@@ -16,7 +16,11 @@
 }
 
 .food-list .item {
+  position: relative;
+  z-index: 1;
+  padding: 24rpx;
   display: flex;
+  border-bottom: 1rpx solid #ececec;
 }
 
 .food-list .left {
@@ -24,7 +28,85 @@
 }
 
 .food-list .left .foodImg {
-  width: 130rpx;
-  max-height: 130rpx;
-  border-radius: 3px;
+  width: 160rpx;
+  max-height: 160rpx;
+  border-radius: 5px;
+}
+
+.food-list .rate {
+  line-height: 20px;
+}
+
+.food-list .name {
+  font-size: 34rpx;
+  line-height: 20px;
+}
+
+.food-list .distributionFee {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.food-list .distributionTime {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.food-list .item .vancheckbox {
+  position: absolute;
+  z-index: 2;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+
+.food-list .submit-title {
+  color: #0089dc;
+  font-size: 30rpx;
+}
+
+.value-class {
+  flex: none !important;
+}
+
+.submit-buttons {
+  display: flex;
+  padding: 0rpx 10rpx;
+}
+
+.submit-buttons .items {
+  padding:20rpx 10rpx;
+  flex: 1;
+}
+
+.shopNum {
+  position: fixed;
+  z-index: 99;
+  top: 260rpx;
+  right: 0px;
+  padding: 20rpx;
+  border-radius: 50%;
+  background: #504d53;
+}
+
+.shopNum image {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.shopNum .shopNum-text {
+  position: absolute;
+  z-index: 100;
+  left: -2rpx;
+  top: -2rpx;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24rpx;
+  display: inline-block;
+  background: red;
+  color: #fff;
 }

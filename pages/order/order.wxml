@@ -1,2 +1,64 @@
 <!--pages/order/order.wxml-->
-<view class='container'>order</view>
+<view class='order'>
+  <view class='items'
+    wx:for="{{orderList}}" 
+    wx:for-index="index" 
+    wx:for-item="item" 
+    wx:key="item"
+  >
+    <view class='food-img'>
+      <image src='{{item.foodImgSrc}}'></image>
+    </view>
+    <view class='order-main'>
+      <view class='name'>{{item.name}}</view>
+      <view class='time'>{{item.time}}</view>
+      <view class="fee">
+        <van-row>
+          <van-col span="10"><view class="fee-item">菜品</view></van-col>
+          <van-col span="6"><view class="fee-item">数量</view></van-col>
+          <van-col span="6"><view class="fee-item text-r">小计(元)</view></van-col>
+        </van-row>      
+      </view>
+      <view class="fee">
+        <van-row
+          wx:for="{{item.foodList}}" 
+          wx:for-index="foodListindex" 
+          wx:for-item="foodListitem" 
+          wx:key="foodListitem"
+        >
+          <van-col span="10"><view class="fee-item">{{foodListitem.name}}</view></van-col>
+          <van-col span="6"><view class="fee-item">{{foodListitem.num}}</view></van-col>
+          <van-col span="6"><view class="fee-item text-r">{{foodListitem.fee}}</view></van-col>
+        </van-row>      
+      </view> 
+      <view class="fee">
+        <van-row>
+          <van-col span="10"><view class="fee-item">餐盒</view></van-col>
+          <van-col span="6"><view class="fee-item"></view></van-col>
+          <van-col span="6"><view class="fee-item text-r">{{item.lunchboxfee}}</view></van-col>
+          <van-col span="10"><view class="fee-item">店铺满减优惠</view></van-col>
+          <van-col span="6"><view class="fee-item"></view></van-col>
+          <van-col span="6"><view class="fee-item text-r c-red">-{{item.Discountfee}}</view></van-col>
+          <van-col span="10"><view class="fee-item">蜂鸟配送</view></van-col>
+          <van-col span="6"><view class="fee-item"></view></van-col>
+          <van-col span="6"><view class="fee-item text-r">{{item.Deliveryfee}}</view></van-col>
+        </van-row>      
+      </view> 
+      <view class="fee-bottom">
+        <van-row>
+          <van-col span="10"><view class="fee-item"></view></van-col>
+          <van-col span="6"><view class="fee-item"></view></van-col>
+          <van-col span="6"><view class="fee-item text-r">支付：<text class='c-red'>{{item.sumfee}}</text></view></van-col>
+        </van-row>      
+      </view>
+      <van-stepper
+        value="{{ item.num }}"
+        integer
+        min="0"
+      />   
+    </view>
+  </view>
+</view>
+<view class='text-r pay'>
+  <van-button type="primary" block="true" bindtap="pay">支付</van-button>
+</view>

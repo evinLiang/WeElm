@@ -1,1 +1,26 @@
 /* pages/me/me.wxss */
+.me-top {
+  background: #0089dc;
+  padding: 40rpx 40rpx;
+  display: flex;
+}
+
+.avatar {
+  padding: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.avatar image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.me-top .content {
+  color: #fff;
+  padding-top: 30rpx;
+}

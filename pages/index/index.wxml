@@ -8,28 +8,59 @@
   value="{{ keyWord }}"
   placeholder="请输入搜索关键词"
   use-action-slot
-  bind:search="onSearch"
+  bind:change="onTextChange"
 >
   <view slot="action" bind:tap="onSearch">搜索</view>
 </van-search>
-<view class='container'>
-  <view class='food-list'>
-    <view 
-      class='item' 
-      wx:for="{{foodList}}" 
-      wx:for-index="index" 
-      wx:for-item="item" 
-      wx:key="item"
-    >
-      <view class="left">
-        <image class="foodImg" src="{{item.foodImgSrc}}"></image>
-      </view>
-      <view class="right">
-        <view>{{item.name}}</view>
-        <view><van-rate gutter="0" size="10" value="{{ item.rate }}" /></view>
-        {{item.distributionFee}}
-        {{item.distributionTime}}
+<view class='whitespace'></view>
+<view class='food-list'>
+  <view 
+    class='item' 
+    wx:for="{{foodList}}" 
+    wx:for-index="index" 
+    wx:for-item="item" 
+    wx:key="item"
+  >
+    <view class="left">
+      <image class="foodImg" src="{{item.foodImgSrc}}"></image>
+      <view class='distributionTime'>{{item.distributionTime}}分钟</view>
+    </view>
+    <view class="right">
+      <view class="name">{{item.name}}</view>
+      <view><van-rate class="rate" gutter="0" size="10" value="{{ item.rate }}" /></view>
+      <view class='distributionFee'>夜间配送费 ¥{{item.distributionFee}}</view>
+      <view>
+        <van-tag type="danger" class="mr-5">新</van-tag>
+        <van-tag plain>保</van-tag>
       </view>
     </view>
+    <van-checkbox class='vancheckbox' value="{{ item.checked }}" bind:change="onFoodChange" data-index="{{index}}" data-id="{{item.id}}"></van-checkbox>
   </view>
+  <view class='whitespace'></view>
+  <view class='submit'>
+    <van-cell title="规格" value="" title-class="submit-title" />
+    <van-checkbox-group value="{{ onAdditionalResult }}" bind:change="onAdditionalChange">
+      <van-cell-group >
+        <van-cell
+          wx:for="{{ onAdditionalList }}"
+          wx:key="index"
+          title="{{ item.name }}"
+          value-class="value-class"
+          clickable
+          data-index="{{ index }}"
+          bind:click="additionalToggle"
+        >
+          <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item.key }}" />
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+    <view class='submit-buttons'>
+      <view class='items'><van-button block="true" type="primary" bindtap="addCart">加入购物车</van-button></view>
+      <view class='items'><van-button block="true" type="info" bindtap="submitOrder">提交订单</van-button></view>
+    </view>  
+  </view>
+</view>
+<view class='shopNum'>
+  <text class='shopNum-text' wx:if="{{shopNum > 0}}">{{shopNum}}</text>
+  <image src='../../images/icon2.png'></image>
 </view>
