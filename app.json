@@ -35,5 +35,9 @@
       }
     ]
   },
+  "usingComponents": {
+    "van-button": "vant/button/index",
+    "van-search": "vant/search/index"
+  },
   "sitemapLocation": "sitemap7.json"
 }
